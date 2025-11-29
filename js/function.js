@@ -31,7 +31,6 @@ $(function () {
   }, 0);
 });
 
-
 // スクロールしたら下からフェードイン
 $(function () {
   $(window).scroll(function () {
@@ -44,32 +43,6 @@ $(function () {
       }
     });
 
-    $('.fadein-right').each(function () {
-      var position = $(this).offset().top;
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
-      if (scroll > position - windowHeight + 180) {
-        $(this).addClass('fadein-right-active');
-      }
-    });
-
-    $('.fadein-left').each(function () {
-      var position = $(this).offset().top;
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
-      if (scroll > position - windowHeight + 180) {
-        $(this).addClass('fadein-left-active');
-      }
-    });
-
-    $('.fadein-blur').each(function () {
-      var position = $(this).offset().top;
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
-      if (scroll > position - windowHeight + 180) {
-        $(this).addClass('fadein-blur-active');
-      }
-    });
   });
 });
 
