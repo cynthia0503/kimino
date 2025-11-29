@@ -8,7 +8,7 @@ $(function () { // DOMの準備ができたら実行
         $(this).addClass('fadein-up-active');
       }
     });
-  }).scroll(); // 👈 これを追加！
+  }).scroll(); //
   // または .trigger('scroll');
 });
 
@@ -28,7 +28,7 @@ $(function () {
   // ページ読み込み完了（DOM Ready）後、800ミリ秒（0.8秒）後に実行
   setTimeout(function () {
     $(window).trigger('scroll');
-  }, 800);
+  }, 0);
 });
 
 
