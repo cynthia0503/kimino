@@ -1067,12 +1067,12 @@ voices
   font-size: 5vw;
 }
 
-.read-more-1 label:hover {
+/* .read-more-1 label:hover {
   border: 1px solid #005493;
   background-color: #fff;
   color: #005493;
   cursor: pointer;
-}
+} */
 
 .read-more-1:has(:checked) label {
   display: none;
@@ -1087,9 +1087,9 @@ voices
   content: '';
 }
 
-.read-more-1 label:hover::after {
+/* .read-more-1 label:hover::after {
   background-color: #005493;
-}
+} */
 
 .read-more-1 input {
   display: none;
@@ -1181,12 +1181,12 @@ voices
   font-size: 5vw;
 }
 
-.read-more-2 label:hover {
+/* .read-more-2 label:hover {
   border: 1px solid #e4f9fd;
   background-color: #005493;
   color: #e4f9fd;
   cursor: pointer;
-}
+} */
 
 .read-more-2:has(:checked) label {
   display: none;
@@ -1201,9 +1201,9 @@ voices
   content: '';
 }
 
-.read-more-2 label:hover::after {
+/* .read-more-2 label:hover::after {
   background-color: #005493;
-}
+} */
 
 .read-more-2 input {
   display: none;
