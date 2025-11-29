@@ -37,8 +37,8 @@ a {
 }
 
 .fadein-up-active {
-  -webkit-animation-duration: 1.2s;
-  animation-duration: 1.2s;
+  -webkit-animation-duration: .8s;
+  animation-duration: .8s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
   animation-name: fadeUPAnime;
