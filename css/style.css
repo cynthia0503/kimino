@@ -1075,7 +1075,11 @@ voices
 } */
 
 .read-more-1:has(:checked) label {
-  display: none;
+   opacity: 0;           /* 透明化 */
+  pointer-events: none; /* クリック無効化 */
+  outline: none;
+  box-shadow: none;
+  transition: opacity 0.3s;
 }
 
 .read-more-1 label::after {
@@ -1189,7 +1193,11 @@ voices
 } */
 
 .read-more-2:has(:checked) label {
-  display: none;
+   opacity: 0;           /* 透明化 */
+  pointer-events: none; /* クリック無効化 */
+  outline: none;
+  box-shadow: none;
+  transition: opacity 0.3s;
 }
 
 .read-more-2 label::after {
