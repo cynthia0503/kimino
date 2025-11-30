@@ -27,6 +27,9 @@ a {
   text-decoration: none;
 }
 
+ul {
+  padding-inline-start:0;
+}
 /*上から下に出る*/
 .fade-up {
   opacity: 0;
@@ -66,7 +69,7 @@ a {
 }
 
 .shine-button {
-   display: block;
+  display: block;
   width: 120%;
   border-radius: 15px;         /* 丸みボタン */
   position: relative;           /* 光用エフェクトの基準に */
@@ -321,7 +324,6 @@ problem-reason　
 }
 
 @media screen and (min-width: 850px) {
-
   .swiper-button-next,
   .swiper-button-prev {
     width: 3.3em !important;
@@ -367,9 +369,6 @@ CTAボタン
 }
 
 
-.last-cta {
-  margin-bottom: 30px;
-}
 /*  ==============================
 worries
 お悩みコンテンツ
@@ -1289,4 +1288,42 @@ voices
   bottom: 0;
   left: 50%;
   /* background-color: #fd6229; */
+}
+
+
+#footer{
+  margin: 0 auto;
+  max-width: 850px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #e7f1fc;
+  text-align: center;
+  padding-bottom: 10px;
+  color: #273146;
+  font-size: 2.7vw;
+}
+
+#footer div {
+  padding: 10px 0 0 0;
+}
+
+#footer .title{
+  font-size: 3vw;
+}
+#footer li{
+  padding-top: 1.5rem;
+}
+
+#footer li a{
+    color: #273146;
+}
+
+@media screen and (min-width: 850px) {
+  #footer{
+font-size: 14px;
+  }
+
+  #footer .title{
+font-size: 18px;
+  }
 }
