@@ -668,7 +668,7 @@ access
   height: 45vw;
   margin-top: 0vw;
   margin-left: -30vw;
-  /* pointer-events: none; */
+  pointer-events: none;
 }
 
 
