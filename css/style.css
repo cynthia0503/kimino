@@ -185,9 +185,9 @@ fv
 }
 
 .fv .txt-01 {
-  width: 21.8%;
-  left: 47%;
-  bottom: 53%;
+  width: 65%;
+  left: 4%;
+  bottom: 51%;
 }
 
 
@@ -353,13 +353,18 @@ CTAボタン
   position: absolute;
   width: 95.6%;
   left: 2.5%;
-  bottom: 2.5em;
+  bottom: 4vw;
 }
 
 .cta img {
   width: 95.6%;
 }
 
+@media screen and (min-width: 850px) {
+.cta-btn {
+  bottom: 2.5em;
+}
+}
 
 /*  ==============================
 worries
