@@ -98,13 +98,29 @@ $(function () {
 // 浮動ボタン表示（PC / スマホ）
 // ==============================
 document.addEventListener("DOMContentLoaded", () => {
+  // -----------------------------
+  // floatボタン表示処理
+  // -----------------------------
   const floatBtn = document.querySelector(".float");
-  if (!floatBtn) return;
+  if (floatBtn) {
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY || window.pageYOffset;
+      const threshold = window.innerWidth >= 1025 ? 800 : 500;
+      floatBtn.style.display = scrollY > threshold ? "block" : "none";
+    });
+  }
 
-  window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY || window.pageYOffset;
-    const threshold = window.innerWidth >= 1025 ? 800 : 500;
+  // -----------------------------
+  // 動画再生処理（音声付き）
+  // -----------------------------
+  const video = document.getElementById("teacherVideo");
+  const playBtn = document.getElementById("playBtn");
 
-    floatBtn.style.display = scrollY > threshold ? "block" : "none";
-  });
+  if (video && playBtn) {
+    playBtn.addEventListener("click", () => {
+      video.muted = false; // ミュート解除
+      video.play();         // 再生
+      playBtn.style.display = "none"; // ボタン非表示
+    });
+  }
 });
