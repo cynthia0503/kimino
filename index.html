@@ -27,12 +27,9 @@
     <section class="fv">
       <img id="fv-mov" src="./media/fv.webp" alt="まだ間に合う、みんな夏から志望校に逆転合格！" width="850">
       <div class="txt-01 fade-up">
-        <img id="fv-mov" src="./media/fv-txt1.webp" alt="登校できるようになった生徒は10人中に9人" width="557">
+        <img id="fv-mov" src="./media/fv-txt.webp" alt="登校できるようになった生徒は10人中に9人" width="557">
       </div>
-      <div class="txt-02 fade-up2">
-        <img id="fv-mov" src="./media/fv-txt2.webp" alt="通信制サポート校" width="557">
-      </div>
-      <div class="btn">
+      <div class="btn shine-button">
         <a href="#access">
           <img src="./media/fv-cta.webp" alt="通信制サポート校" width="785">
         </a>
@@ -50,7 +47,10 @@
       </div>
       <div class="results">
         <img loading="lazy" src="./media/results_04.webp" alt="不登校改善率89.3%" width="850" height="1286">
-        <a href="#access" class="btn">
+        <div class="txt-01 fade-up">
+          <img loading="lazy" src="./media/results_04-txt.webp" alt="不登校改善率89.3%" width="528" height="323">
+        </div>
+        <a href="#access" class="btn pulse-btn">
           <img loading="lazy" src="./media/cta.webp" alt="今すぐ申し込でみる" width="840" height="323">
         </a>
       </div>
@@ -81,11 +81,9 @@
                 <img loading="lazy" src="./media/problem-reason_06.webp" width="771" height="468" alt="不登校原因6">
               </div>
               <div class="swiper-slide">
-                <img loading="lazy" src="./media/problem-reason_06.webp" width="771" height="468" alt="不登校原因7">
+                <img loading="lazy" src="./media/problem-reason_07.webp" width="771" height="468" alt="不登校原因7">
               </div>
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
           </div>
         </div>
       </div>
@@ -107,7 +105,7 @@
         <img loading="lazy" src="./media/proposal-txt.webp" alt="諦めないてください" width="719" height="231">
       </div>
       <div class="img2 fade-up">
-        <img loading="lazy" src="./media/proposal-img.webp" alt="３つのポイント" width="657" height="633">
+        <img loading="lazy" src="./media/proposal-img2.webp" alt="また歩き出せる" width="505" height="227">
       </div>
     </section>
     <!--------- Point --------->
@@ -127,10 +125,11 @@
       <div class="point2">
         <div class="point2-video">
           <img loading="lazy" src="./media/point2_01.webp" alt="" width="850" height="6458">
-          <video oncontextmenu="return false;" muted="" autoplay="" playsinline="" loop=""
-            poster="./media/teachers.webp" alt="先生たちの授業中の動画">
+          <video id="teacherVideo" oncontextmenu="return false;" playsinline controls poster="./media/teachers.webp">
             <source src="./media/teachers.mp4" type="video/mp4">
           </video>
+          <!-- 再生ボタン -->
+          <div class="video-play-btn" id="playBtn"></div>
         </div>
         <div class="teachers">
           <img loading="lazy" src="./media/point2_02.webp" alt="POINT2 生徒１の講師陣" width="850" height="797">
@@ -171,22 +170,36 @@
         </div>
         <div class="detail-btn detail-point3">
           <div class="btn_animation">
-            <div> <img loading="lazy" src="./media/click-btn.webp" alt="詳しくはこちら"></div>
+            <div class="shine-button"> <img loading="lazy" src="./media/click-btn.webp" alt="詳しくはこちら"></div>
+            <img loading="lazy" src="./media/click-btn-bg.webp" alt="" width="850" height="159">
           </div>
         </div>
         <div id="point3-detail">
           <img loading="lazy" src="./media/point3_05.webp" alt="カリキュラム紹介1~1" width="850" height="2080">
           <img loading="lazy" src="./media/point3_06.webp" alt="カリキュラム紹介3" width="850" height="1151">
         </div>
-        <img loading="lazy" src="./media/point3_07.webp" alt="だから通学継続率90%" width="850" height="1097">
+        <div class="point3-txt">
+          <img loading="lazy" src="./media/point3_07.webp" alt="だから通学継続率90%" width="850" height="1097">
+          <div class="txt-01 fade-up">
+            <img loading="lazy" src="./media/point3_07-txt.webp" alt="90%" width="467" height="363">
+          </div>
+        </div>
+
         <img loading="lazy" src="./media/point3_08.webp" alt="イベントも盛りたくさん" width="850" height="1097">
       </div>
     </section>
-    <img loading="lazy" src="./media/benefit1.webp" alt="歩いている、笑顔女子高校生イメージ像" width="850" height="1135">
+    <div class="benefit1">
+      <img loading="lazy" src="./media/benefit1.webp" alt="歩いている、笑顔女子高校生イメージ像" width="850" height="1135">
+      <div class="txt-01 f">
+        <img loading="lazy" src="./media/benefit1-txt.webp" alt="歩いている、笑顔女子高校生イメージ像" width="326" height="922">
+      </div>
+
+    </div>
+
 
     <div class="cta-box">
       <img loading="lazy" src="./media/pledge.webp" alt="キミノ高等学院の約束" width="850" height="1204">
-      <a href="#access" class="cta-btn">
+      <a href="#access" class="cta-btn pulse-btn">
         <img loading="lazy" src="./media/cta.webp" width="717" height="259" alt="今すぐ無料説明会に申し込む">
       </a>
     </div>
@@ -197,7 +210,8 @@
       <img loading="lazy" src="./media/education_03.webp" width="850" height="1112" alt="通信制高校と全日制高校の比較">
       <div class="detail-btn detail-education">
         <div class="btn_animation">
-          <div> <img loading="lazy" src="./media/click-btn.webp" alt="詳しくはこちら"></div>
+          <div class="shine-button"> <img loading="lazy" src="./media/click-btn.webp" alt="詳しくはこちら"></div>
+          <img loading="lazy" src="./media/click-btn-bg2.webp" alt="" width="850" height="159">
         </div>
       </div>
       <div id="education-detail">
@@ -210,10 +224,16 @@
         <img loading="lazy" src="./media/education_10.webp" alt="特徴4" width="850" height="1552">
       </div>
       <img loading="lazy" src="./media/summary.webp" alt="特徴まとめ" width="850" height="1111">
-      <img loading="lazy" src="./media/benefit2.webp" alt="あなたのこれから描こう" width="850" height="1946">
+      <div class="benefit2">
+        <img loading="lazy" src="./media/benefit2.webp" alt="あなたのこれから描こう" width="850" height="1946">
+        <div class="txt-01 fade-up">
+          <img loading="lazy" src="./media/benefit2-txt.webp" alt="あなたのこれから描こう" width="225" height="819">
+        </div>
+      </div>
+
       <div class="cta-box">
         <img loading="lazy" src="./media/btn-bg.webp" alt="" width="850" height="400">
-        <a href="#access" class="cta-btn">
+        <a href="#access" class="cta-btn pulse-btn">
           <img loading="lazy" src="./media/cta.webp" width="717" height="259" alt="今すぐ無料説明会に申し込む">
         </a>
       </div>
@@ -248,7 +268,7 @@
             </p>
           </div>
         </div>
-        <a href="https://timerex.net/s/celf/54b1e035">
+        <a class="shine-button" href="https://timerex.net/s/celf/54b1e035">
           <img src="./media/access-btn.webp" alt="この校舎で無料相談をする">
         </a>
       </div>
@@ -278,7 +298,7 @@
             </p>
           </div>
         </div>
-        <a href="https://timerex.net/s/celf/f2f5494a">
+        <a class="shine-button" href="https://timerex.net/s/celf/f2f5494a">
           <img src="./media/access-btn.webp" alt="この校舎で無料相談をする">
         </a>
       </div>
@@ -307,7 +327,7 @@
             </p>
           </div>
         </div>
-        <a href="https://timerex.net/s/celf/a476251c">
+        <a class="shine-button" href="https://timerex.net/s/celf/a476251c">
           <img src="./media/access-btn.webp" alt="この校舎で無料相談をする">
         </a>
       </div>
@@ -336,7 +356,7 @@
             </p>
           </div>
         </div>
-        <a href="https://timerex.net/s/celf/a34dea6c">
+        <a class="shine-button" href="https://timerex.net/s/celf/a34dea6c">
           <img src="./media/access-btn.webp" alt="この校舎で無料相談をする">
         </a>
       </div>
@@ -365,7 +385,7 @@
             </p>
           </div>
         </div>
-        <a href="https://timerex.net/s/celf/ac0c7c87">
+        <a class="shine-button" href="https://timerex.net/s/celf/ac0c7c87">
           <img src="./media/access-btn.webp" alt="この校舎で無料相談をする">
         </a>
       </div>
@@ -394,7 +414,7 @@
             </p>
           </div>
         </div>
-        <a href="https://timerex.net/s/celf/4fb6e6e0">
+        <a class="shine-button" href="https://timerex.net/s/celf/4fb6e6e0">
           <img src="./media/access-btn.webp" alt="この校舎で無料相談をする">
         </a>
       </div>
@@ -678,9 +698,9 @@
                 <span class="txt-blue">
                   一番雰囲気が良かったキミノ高等学院
                 </span>
-                に決めました。ここでは、
+                に決めました。
                 <span class="txt-blue">
-                  一番雰囲気が良かったキミノ高等学院に決めました。ここでは、先生たち一人一人が真摯に接してくれるので、自然と自分たちも敬意を持って質問したり話をしたりできる関係性になりました。
+                  ここでは、先生たち一人一人が真摯に接してくれるので、自然と自分たちも敬意を持って質問したり話をしたりできる関係性になりました。
                 </span>
               </p>
               <p>
@@ -743,7 +763,7 @@
                   娘も通っているうちにどんどん楽しくなってきたようで今では週５日毎日学校に通い
                 </span>
                 、帰りにお友達とご飯を食べて帰ってきたり、打ち上げに行ってくる！と以前の
-                <span class="txt-blue">
+                <span class="txt-yellow">
                   全日制にいた時より楽しそうな娘を見て、本当にこの選択をして良かったな…と思いましいた。
                 </span>
               </p>
@@ -769,7 +789,7 @@
 
     <div class="cta-box">
       <img src="./media/btn-bg.webp" width="850" height="357" alt="">
-      <a href="#access" class="cta-btn">
+      <a href="#access" class="cta-btn pulse-btn">
         <img loading="lazy" src="./media/cta.webp" width="717" height="259" alt="今すぐ無料説明会に申し込む">
       </a>
     </div>
