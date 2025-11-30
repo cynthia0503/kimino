@@ -450,9 +450,16 @@ point
   position: absolute;
   width: 90% !important;
   left: 5%;
-  bottom: 5%;
+  bottom: 3%;
 }
 
+.point2-video .video-title {
+  position: absolute;
+width: 51%;
+left: 25%;
+bottom: 38%;
+z-index: 99;
+}
 
 .teachers {
   position: relative;
