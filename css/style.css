@@ -32,13 +32,9 @@ a {
   opacity: 0;
 }
 
-.fade-up2 {
-  opacity: 0;
-}
-
 .fadein-up-active {
-  -webkit-animation-duration: .8s;
-  animation-duration: .8s;
+  -webkit-animation-duration: 1.2s;
+  animation-duration: 1.2s;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
   animation-name: fadeUPAnime;
@@ -69,39 +65,84 @@ a {
   }
 }
 
-
-.fadein-up-active2 {
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-  animation-name: fadeUPAnime;
-  /*アニメーション後、要素が表示されたままにする*/
+.shine-button {
+   display: block;
+  width: 120%;
+  border-radius: 15px;         /* 丸みボタン */
+  position: relative;           /* 光用エフェクトの基準に */
+  overflow: hidden;             /* 光がボタン外に溢れないように */
+  cursor: pointer;
 }
 
-@-webkit-keyframes fadeUPAnime {
+/* ——— ボタンの基本スタイル ——— */
+.shine-button {
+  display: block;
+  width: 100%;
+  border-radius: 10px;         /* 丸みボタン */
+  position: relative;           /* 光用エフェクトの基準に */
+  overflow: hidden;             /* 光がボタン外に溢れないように */
+  cursor: pointer;
+}
+
+
+/* ——— 光のエフェクト（疑似要素 before） ——— */
+.shine-button::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0.9)
+  );
+  width: 50px;
+  height: 50px;
+  top: -60px;
+  left: -60px;
+
+  animation-name: shine-run;
+  animation-delay: 0s;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+}
+
+/* ——— アニメーション内容 ——— */
+@keyframes shine-run {
   0% {
+    transform: scale(0) rotate(50deg);
     opacity: 0;
-    transform: translateY(20%);
   }
-
-  100% {
+  40% {
+    transform: scale(1) rotate(50deg);
     opacity: 1;
-    transform: translateY(0);
+  }
+  100% {
+    transform: scale(250) rotate(50deg);
+    opacity: 0;
   }
 }
 
-@keyframes fadeUPAnime {
+
+.pulse-btn {
+  display: inline-block;
+  transition: transform 0.3s;
+  animation: pulse 1.8s infinite ease-in-out;
+}
+
+/* ふわっと大きく → 元に戻る */
+@keyframes pulse {
   0% {
-    opacity: 0;
-    transform: translateY(20%);
+    transform: scale(0.9);
   }
-
+  50% {
+    transform: scale(1); /* 8%拡大（自然） */
+  }
   100% {
-    opacity: 1;
-    transform: translateY(0%);
+    transform: scale(0.9);
   }
 }
+
 
 .img1,
 .img2,
@@ -139,22 +180,16 @@ fv
 }
 
 .fv .txt-01,
-.fv .txt-02,
 .fv .btn {
   position: absolute;
 }
 
 .fv .txt-01 {
-  width: 66%;
-  left: 3%;
-  bottom: 50.5%;
+  width: 12%;
+  left: 47%;
+  bottom: 53%;
 }
 
-.fv .txt-02 {
-  width: 67%;
-  left: -1%;
-  bottom: 36.5%;
-}
 
 .fv .btn {
   width: 90%;
@@ -192,6 +227,12 @@ fv
   bottom: 3%;
 }
 
+.results .txt-01{
+  position: absolute;
+  width: 62%;
+  left: 12%;
+  bottom: 43%;
+}
 /*  ==============================
 problem-reason　
 無限ループスライダー
@@ -304,7 +345,7 @@ CTAボタン
   position: absolute;
   width: 95.6%;
   left: 2.5%;
-  bottom: 2.5em
+  bottom: 2.5em;
 }
 
 .cta img {
@@ -344,9 +385,9 @@ proposal
 }
 
 .proposal .img2 {
-  width: 77.2%;
-  left: 11.3%;
-  bottom: 28%;
+  width: 59.4%;
+  left: 4%;
+  bottom: 5.5%;
 }
 
 /*  ==============================
@@ -437,13 +478,40 @@ point
   }
 }
 
+.point3-txt {
+  position: relative;
+}
+
+.point3-txt .txt-01 {
+  position: absolute;
+  width: 55%;
+  left: 22.5%;
+  bottom: 22%;
+}
+
+.btn_animation {
+  position: relative;
+}
+
+.btn_animation .shine-button{
+  position: absolute;
+  width: 100%;
+  left: 10%;
+  bottom: 15%;
+}
 
 
-
+.detail-education .btn_animation .shine-button {
+    bottom: 30% ;
+}
 
 /*------ より詳しくはこちらボタン　共通---------*/
 .detail-btn {
   position: relative;
+}
+
+.detail-btn .shine-button{
+  width: 80%;
 }
 
 @media screen and (min-width: 850px) {
@@ -471,59 +539,6 @@ point
     box-shadow: 0 0 0 #82a3c6;
   }
 
-  .btn_animation .btn {
-    display: block;
-    position: relative;
-    width: 250px;
-    height: 50px;
-    line-height: 5rem;
-    border-radius: 5px;
-    text-decoration: none;
-    background-color: #4b93c2;
-    border: solid 1px #ffffff;
-    /*線*/
-    color: #ffffff;
-    text-align: center;
-    transition: .5s;
-  }
-
-  .btn_animation .btn:before,
-  .btn_animation .btn:after {
-    content: "";
-    position: absolute;
-    z-index: -10;
-    width: 250px;
-    height: 50px;
-    top: 0;
-    left: 0;
-    border-radius: 5px;
-    background: #c3ecfc;
-    transform: translate3d(0, 0, 0);
-  }
-
-  .btn_animation .btn:before {
-    animation: anime 1.5s ease-out infinite;
-  }
-
-  .btn_animation .btn:after {
-    animation: anime 1.5s ease-out 2s infinite;
-  }
-
-  @keyframes anime {
-    0% {
-      transform: scale(1);
-      opacity: .2
-    }
-
-    90% {
-      opacity: .1
-    }
-
-    to {
-      transform: scale(1.2, 1.4);
-      opacity: 0
-    }
-  }
 }
 
 @media screen and (max-width: 478px) {
@@ -547,61 +562,8 @@ point
     box-shadow: 0 0 0 #c3ecfc;
   }
 
-
-  .btn_animation .btn {
-    display: block;
-    position: relative;
-    width: 250px;
-    height: 25px;
-    line-height: 2.5rem;
-    border-radius: 2px;
-    text-decoration: none;
-    background-color: #4b93c2;
-    border: solid 1px #ffffff;
-    /*線*/
-    color: #ffffff;
-    text-align: center;
-    transition: .5s;
-  }
-
-  .btn_animation .btn:before,
-  .btn_animation .btn:after {
-    content: "";
-    position: absolute;
-    z-index: -10;
-    width: 250px;
-    height: 25px;
-    top: 0;
-    left: 0;
-    border-radius: 2px;
-    background: #c3ecfc;
-    transform: translate3d(0, 0, 0);
-  }
-
-  .btn_animation .btn:before {
-    animation: anime 1.5s ease-out infinite;
-  }
-
-  .btn_animation .btn:after {
-    animation: anime 1.5s ease-out 2s infinite;
-  }
-
-  @keyframes anime {
-    0% {
-      transform: scale(1);
-      opacity: .2
-    }
-
-    90% {
-      opacity: .1
-    }
-
-    to {
-      transform: scale(1.2, 1.4);
-      opacity: 0
-    }
-  }
 }
+
 
 /* -----  詳しく内容を隠す　------*/
 #point3-detail,
@@ -609,7 +571,29 @@ point
   display: none;
 }
 
+#education-detail{
+  padding-bottom: 2.5em;
+}
 
+.benefit1,
+.benefit2{
+  position: relative;
+}
+
+.benefit1 .txt-01 {
+  position: absolute;
+  width: 38.3%;
+  right: 4%;
+  bottom: 12%;
+}
+
+
+.benefit2 .txt-01 {
+  position: absolute;
+  width: 26.4%;
+  left: 8%;
+  bottom: 52%;
+}
 
 /*  ==============================
 access
@@ -676,7 +660,7 @@ access
   height: 45vw;
   margin-top: 0vw;
   margin-left: -30vw;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
 
@@ -931,9 +915,6 @@ details {
 
 
 
-
-
-
 @media screen and (max-width: 850px) {
   .faq-box .accordion_one .accordion_header .i_box .one_i {
     width: 20px;
@@ -961,7 +942,6 @@ details {
     left: 8px;
   }
 }
-
 
 /*=========.FAQ END=========*/
 
@@ -1067,16 +1047,11 @@ voices
   font-size: 5vw;
 }
 
-/* .read-more-1 label:hover {
-  border: 1px solid #005493;
-  background-color: #fff;
-  color: #005493;
-  cursor: pointer;
-} */
-
 .read-more-1:has(:checked) label {
-   opacity: 0;           /* 透明化 */
-  pointer-events: none; /* クリック無効化 */
+  opacity: 0;
+  /* 透明化 */
+  pointer-events: none;
+  /* クリック無効化 */
   outline: none;
   box-shadow: none;
   transition: opacity 0.3s;
@@ -1193,8 +1168,10 @@ voices
 } */
 
 .read-more-2:has(:checked) label {
-   opacity: 0;           /* 透明化 */
-  pointer-events: none; /* クリック無効化 */
+  opacity: 0;
+  /* 透明化 */
+  pointer-events: none;
+  /* クリック無効化 */
   outline: none;
   box-shadow: none;
   transition: opacity 0.3s;
@@ -1209,7 +1186,8 @@ voices
   content: '';
 }
 
-/* .read-more-2 label:hover::after {
+/* 
+.read-more-2 label:hover::after {
   background-color: #005493;
 } */
 
