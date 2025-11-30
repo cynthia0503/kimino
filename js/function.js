@@ -1,8 +1,20 @@
+
+
 $(function () {
   // ==============================
   // フェードアップアニメーション
   // ==============================
   function fadeUpOnScroll() {
+        $('.fv .fade-up').each(function () {
+      const position = $(this).offset().top;
+      const scroll = $(window).scrollTop();
+      const windowHeight = $(window).height();
+
+      if (scroll > position - windowHeight + 180) {
+        $(this).addClass('.fv fadein-up-active');
+      }
+    });
+
     $('.fade-up').each(function () {
       const position = $(this).offset().top;
       const scroll = $(window).scrollTop();
