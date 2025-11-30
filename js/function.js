@@ -98,15 +98,32 @@ $(function () {
 // 浮動ボタン表示（PC / スマホ）
 // ==============================
 document.addEventListener("DOMContentLoaded", () => {
+
   // -----------------------------
-  // floatボタン表示処理
+  // floatボタン表示処理 + footer到達で非表示
   // -----------------------------
   const floatBtn = document.querySelector(".float");
-  if (floatBtn) {
+  const footer = document.querySelector("footer");
+
+  if (floatBtn && footer) {
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY || window.pageYOffset;
       const threshold = window.innerWidth >= 1025 ? 800 : 500;
-      floatBtn.style.display = scrollY > threshold ? "block" : "none";
+
+      // 基本の表示・非表示
+      if (scrollY > threshold) {
+        floatBtn.style.display = "block";
+      } else {
+        floatBtn.style.display = "none";
+      }
+
+      // 画面下端が footer に触れたら消す
+      const footerTop = footer.getBoundingClientRect().top + window.pageYOffset;
+      const windowBottom = scrollY + window.innerHeight;
+
+      if (windowBottom >= footerTop) {
+        floatBtn.style.display = "none";
+      }
     });
   }
 
@@ -118,9 +135,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (video && playBtn) {
     playBtn.addEventListener("click", () => {
-      video.muted = false; // ミュート解除
+      video.muted = false;  // 音声 ON
       video.play();         // 再生
-      playBtn.style.display = "none"; // ボタン非表示
+      playBtn.style.display = "none"; // 再生ボタン非表示
     });
   }
+
 });
