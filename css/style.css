@@ -197,6 +197,14 @@ fv
   bottom: 2%;
 }
 
+.fv .fadein-up-active {
+  -webkit-animation-duration: 1.6s;
+  animation-duration: 1.6s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  animation-name: fadeUPAnime;
+  /*アニメーション後、要素が表示されたままにする*/
+}
 
 /*  ==============================
 登校実績
